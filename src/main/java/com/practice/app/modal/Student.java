@@ -16,8 +16,6 @@ public class Student {
 	@Id
 	private String studentId;
 	private String name;
-	private String username;
-	private String school;
 	private Date creationDate = new Date();
-	private Map<String, String> address = new HashMap<>();
-}
+	private String address;
+}  

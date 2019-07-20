@@ -50,7 +50,7 @@ public class StudentController {
 
 		}
 
-		return new ArrayList<>();
+		return new ArrayList();
 	}
 
 	@GetMapping(value = "list")
@@ -68,23 +68,23 @@ public class StudentController {
 	@GetMapping(value = "/{studentId}")
 	public Student getStudentByUsername(@PathVariable String studentId) {
 
-		Student student = studentRepository.findOne(studentId);
-
-		return student;
+		return studentRepository.findOne(studentId);
 
 	}
 
-	@PutMapping(value = "/update/{studentId}/{value}")
-	public Student updateStudentInfo(@PathVariable String studentId, @PathVariable String value) {
-		
-		Student student = studentRepository.findOne(studentId);
-		
-		student.setSchool(value);
-		
-		studentRepository.save(student);
-		
-		return student;
-	}
+	/*
+	 * @PutMapping(value = "/update/{studentId}/{value}") public Student
+	 * updateStudentInfo(@PathVariable String studentId, @PathVariable String value)
+	 * {
+	 * 
+	 * Student student = studentRepository.findOne(studentId);
+	 * 
+	 * student.setSchool(value);
+	 * 
+	 * studentRepository.save(student);
+	 * 
+	 * return student; }
+	 */
 	
 	@DeleteMapping(value = "/delete")
 	public void deleteStudent(@PathVariable String studentId) {
