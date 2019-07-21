@@ -24,4 +24,9 @@ http://localhost:8000/student/service/addBulk
 	}
 ]
 
+http://ubuntuhandbook.org/index.php/2015/01/install-openjdk-8-ubuntu-14-04-12-04-lts/
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+docker build -t santosh99y/student-app .
 
