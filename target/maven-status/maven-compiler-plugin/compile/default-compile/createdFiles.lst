@@ -1,6 +1,0 @@
-com\practice\app\controller\StudentController.class
-com\practice\app\repository\StudentCustomRepositoryImpl.class
-com\practice\app\repository\StudentRepository.class
-com\practice\app\repository\StudentCustomeRepository.class
-com\practice\app\SpringBootApp.class
-com\practice\app\modal\Student.class
