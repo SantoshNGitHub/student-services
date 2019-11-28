@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-app
+  template:
+    metadata:
+      labels:
+        app: student-app
+    spec:
+      containers:
+      - name: student-service
+        image: santosh99y/student-app:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: student-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: student-app
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30001
+ 
