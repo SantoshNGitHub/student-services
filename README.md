@@ -1,6 +1,6 @@
 # spring-boot-mongo
 
-[![Build Status](https://dev.azure.com/M1039287/Test/_apis/build/status/Test?branchName=master)](https://dev.azure.com/M1039287/Test/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/personal-org/StudentService/_apis/build/status/StudentService?branchName=master)](https://dev.azure.com/personal-org/StudentService/_build/latest?definitionId=1&branchName=master)
 
 http://localhost:8000/student/service/deleteAll
 
