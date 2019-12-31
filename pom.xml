@@ -56,4 +56,12 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<url>https://github.com/SantoshNGitHub/student-services</url>
+			<id>student-services</id>
+		</repository>
+
+	</distributionManagement>
+
 </project>
