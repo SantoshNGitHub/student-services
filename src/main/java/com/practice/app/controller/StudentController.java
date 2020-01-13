@@ -112,7 +112,7 @@ public class StudentController {
 	@GetMapping(value = "/hello")
 	public String hello() {
 
-		return "Hello World" + "/n";
+		return "Hello World/n";
 	}
 
 }
