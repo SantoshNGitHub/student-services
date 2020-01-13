@@ -1,5 +1,6 @@
 node {
-    def mvnHome = tool 'm3.6.3'
+   // def mvnHome = tool 'm3.6.3'
+   def mvnHome = tool 'Maven_3.3.9'
     
     stage('Git Checkout') {
         cleanWs()
