@@ -3,9 +3,11 @@ package com.practice.app.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mongodb.DBObject;
 import com.practice.app.modal.Student;
 import com.practice.app.repository.StudentCustomRepositoryImpl;
 import com.practice.app.repository.StudentRepository;
@@ -27,6 +30,9 @@ public class StudentController {
 
 	@Autowired
 	StudentRepository studentRepository;
+	
+	@Autowired
+	MongoTemplate mongoTemplate;
 
 	@Autowired
 	StudentCustomRepositoryImpl studentCustomRepositoryImpl;
@@ -98,16 +104,27 @@ public class StudentController {
 
 	@PostMapping(value = "/details/{id}/{key}/{value}")
 	public String addStudentDetails(@PathVariable String id, @PathVariable String key, @PathVariable String value) {
-		
-		return studentCustomRepositoryImpl.addStudentDetails(id, key, value);		
-		
+
+		return studentCustomRepositoryImpl.addStudentDetails(id, key, value);
+
 	}
-	
+
 	@GetMapping(value = "/details/{id}/{key}")
 	public String getStudentDetails(@PathVariable String id, @PathVariable String key) {
-		
+
 		return studentCustomRepositoryImpl.getStudentDetails(id, key);
 	}
+	
+	
+/*	@GetMapping(value = "/search/{searchValue}")
+	public void search(@PathVariable String searchValue) {
+		
+		List<Document> pipeline = new ArrayList<>();
+		Document match = new Document("$match", new Document("$text", new Document("$search", searchValue)));
+		Document sort = new Document("$sort", new Document("score", value));
+		
+	}
+	*/
 
 	@GetMapping(value = "/hello")
 	public String hello() {

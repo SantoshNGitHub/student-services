@@ -16,7 +16,7 @@ public interface StudentCustomeRepository {
 	
 	String getStudentDetails(String id, String key);
 
-	void updateStudentDetails(String id);
+	void updateStudentDetails(String id, String key, String value);
 	
 	void deleteStudent(String id);
 }

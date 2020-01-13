@@ -37,11 +37,6 @@ public class StudentCustomRepositoryImpl implements StudentCustomeRepository {
 
 	}
 
-	@Override
-	public void updateStudentDetails(String id) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void deleteStudent(String id) {
@@ -73,6 +68,12 @@ public class StudentCustomRepositoryImpl implements StudentCustomeRepository {
 				Criteria.where("id").is(id).andOperator(Criteria.where("studentDetails." + key).exists(true)));
 		Student student = mongoTemplate.findOne(query, Student.class);
 		return student != null ? student.getStudentDetails().get(key) : "Unable to fetch student detail";
+	}
+
+	@Override
+	public void updateStudentDetails(String id, String key, String value) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
