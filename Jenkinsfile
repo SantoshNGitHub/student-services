@@ -3,7 +3,7 @@ node {
     
     stage('Git Checkout') {
         cleanWs()
-        git branch: 'cicd', 
+        git branch: 'ci-cd', 
         url: 'https://github.com/SantoshNGitHub/student-services'
     }
     stage('Build') {
