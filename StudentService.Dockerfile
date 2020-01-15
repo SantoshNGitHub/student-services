@@ -1,11 +1,15 @@
 FROM openjdk:8
 
-COPY ./target/student-services-0.0.1-SNAPSHOT.jar /user/src/app/
+ARG JAR_FILE_PATH
 
-WORKDIR /user/src/app/
+RUN mkdir /opt/app
 
-RUN sh -c 'touch student-services-0.0.1-SNAPSHOT.jar'
+RUN mkdir /opt/app/services
 
-ENTRYPOINT ["java","-jar","student-services-0.0.1-SNAPSHOT.jar"]
+COPY $(JAR_FILE_PATH) /opt/app/service/student.jar
+
+VOLUME /opt/app/service/
+
+ENTRYPOINT java -Dserver.port=8000 -jar /opt/app/service/student.jar
 
 EXPOSE 8000  
