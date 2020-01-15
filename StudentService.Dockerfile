@@ -6,7 +6,7 @@ RUN mkdir /opt/app
 
 RUN mkdir /opt/app/services
 
-COPY $(JAR_FILE_PATH) /opt/app/service/student.jar
+COPY ${JAR_FILE_PATH} /opt/app/service/student.jar
 
 VOLUME /opt/app/service/ 
 
